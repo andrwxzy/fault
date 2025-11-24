@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav
       className={`${navbar} fixed top-0 left-0 w-full z-50  hover:bg-white hover:text-black transform transition-all duration-300`}
     >
-      <div className="flex items-center justify-between max-w-7xl px-4 py-1">
+      <div className="flex items-center justify-between max-w-7xl mx-auto px-4 py-1">
         <div className="flex items-center gap-2">
           <NavLink
             to="/"
