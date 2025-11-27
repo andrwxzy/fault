@@ -8,7 +8,7 @@ const RootLayout = () => {
 
   return (
     <div
-      className={` ${bg} w-screen h-screen bg-cover bg-no-repeat text-white`}
+      className={`${bg} w-full min-h-dvh overflow-hidden bg-cover bg-no-repeat text-white`}
     >
       <header>
         <Navbar />

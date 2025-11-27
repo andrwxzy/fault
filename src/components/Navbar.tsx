@@ -27,8 +27,8 @@ const Navbar = () => {
           FAULT
         </Link>
         <div className="flex items-center gap-2">
-          <MdSearch />
-          <MdOutlineShoppingBag />
+          <MdSearch size={24} />
+          <MdOutlineShoppingBag size={24} />
         </div>
       </div>
     </nav>
