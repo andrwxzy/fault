@@ -5,10 +5,15 @@ import { GoDash } from "react-icons/go";
 import { useState } from "react";
 
 const ProductDetails = () => {
-  const { id: product } = useParams();
-  const productItem = products.find((p) => p.title === product);
-
+  const { id } = useParams();
+  const productItem = products.find((p) => p.title === id);
   const [count, setCount] = useState(0);
+
+  const [size, setSize] = useState<string | null>(null);
+
+  const sizeOptions = productItem?.sizes ?? productItem?.waist_sizes; //?? means if the other item is null or undefined go to the next one
+  const hasItem = count > 0 && size !== null;
+  if (!productItem) return <div>Product not found!</div>;
   return (
     <div className="mt-20 text-black flex max-w-7xl mx-auto px-3">
       <div className="w-[50%] flex justify-center">
@@ -26,22 +31,19 @@ const ProductDetails = () => {
         <div className="my-5">
           <p className="mb-2 mt-10">Size:</p>
           <div className="flex flex-wrap gap-2">
-            {productItem?.sizes?.map((s) => (
+            {sizeOptions?.map((s) => (
               <button
+                onClick={() => setSize(s)}
                 key={s}
-                className="w-10 h-10 text-center cursor-pointer hover:bg-gray-300 bg-gray-200"
+                className={`${
+                  size === s
+                    ? "bg-black text-white"
+                    : "bg-gray-200 hover:bg-gray-300"
+                } w-10 h-10 text-center cursor-pointer  transform transition-all duration-300`}
               >
                 {s}
               </button>
-            )) ||
-              productItem?.waist_sizes?.map((s) => (
-                <button
-                  key={s}
-                  className="w-10 h-10 text-center cursor-pointer hover:bg-gray-300 bg-gray-200"
-                >
-                  {s}
-                </button>
-              ))}
+            ))}
           </div>
         </div>
         <div className="flex flex-col mb-5">
@@ -64,10 +66,10 @@ const ProductDetails = () => {
           </div>
         </div>
         <button
-          disabled
+          disabled={!hasItem}
           className="hover:opacity-50 duration-300 disabled:hover:opacity-100 disabled:bg-gray-200 disabled:cursor-not-allowed disabled:text-gray-600 w-full py-3 cursor-pointer bg-black text-white "
         >
-          Choose Size
+          {hasItem ? "Add to bag" : "Choose size"}
         </button>
       </div>
     </div>
