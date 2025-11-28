@@ -14,10 +14,9 @@ export const products = [
     price: 1899.0,
     description:
       "A durable, comfortable, and stylish slim-fit black cotton t-shirt featuring a small chest pocket with the iconic Carhartt woven logo. Perfect for casual wear.",
-    category: "men's clothing",
+    category: "tshirt",
     image: CarharttBlackShirt,
     sizes: ["S", "M", "L", "XL", "2XL"],
-    in_stock: true,
   },
   {
     id: 2,
@@ -25,9 +24,8 @@ export const products = [
     price: 2499.0,
     description:
       "Vintage-look distressed baseball cap in taupe and navy with signature True Religion horseshoe logo embroidery on the front. Adjustable strap for a comfortable fit.",
-    category: "accessories",
+    category: "cap",
     image: TrueReligionCap,
-    in_stock: true,
   },
   {
     id: 3,
@@ -35,10 +33,9 @@ export const products = [
     price: 4699.0,
     description:
       "Vintage black denim jeans with white contrast stitching, yellow 'Sean John' embroidery on the leg, and a relaxed wide-leg fit. Classic hip-hop inspired streetwear.",
-    category: "men's clothing",
+    category: "pants",
     image: SeanBlackDenim,
     waist_sizes: ["30", "32", "34", "36", "38"],
-    in_stock: true,
   },
   {
     id: 4,
@@ -46,10 +43,9 @@ export const products = [
     price: 3899.0,
     description:
       "Soft fleece crewneck sweatshirt in a vibrant lilac/purple color, featuring the classic Stüssy block logo embroidered across the chest. Ideal for layering.",
-    category: "unisex clothing",
+    category: "sweatshirt",
     image: StussyPupleSweatshirt,
     sizes: ["S", "M", "L", "XL"],
-    in_stock: true,
   },
   {
     id: 5,
@@ -57,10 +53,9 @@ export const products = [
     price: 13799.0,
     description:
       "Authentic A Bathing Ape (BAPE) full-zip hoodie featuring the classic BAPE camo pattern and prominent 'BAPE' lettering across the front. Warm and heavy cotton blend.",
-    category: "men's clothing",
+    category: "hoodie",
     image: BapeHoodie,
     sizes: ["M", "L", "XL"],
-    in_stock: true,
     is_exclusive: true,
   },
   {
@@ -69,10 +64,9 @@ export const products = [
     price: 6599.0,
     description:
       "Heavy-duty Carhartt work jacket in faded grey denim with a grey corduroy collar. Features a full zip-front and multiple pockets. Built for durability and style.",
-    category: "men's clothing",
+    category: "jacket",
     image: CarharttGreyJacket,
     sizes: ["M", "L", "XL", "2XL"],
-    in_stock: true,
     is_on_sale: false,
   },
   {
@@ -81,10 +75,9 @@ export const products = [
     price: 2399.0,
     description:
       "Navy blue cotton T-shirt from AAPE (A Bathing Ape) featuring a large circular camo-print logo graphic on the chest with 'AAPE NOW!' text. Regular fit.",
-    category: "men's clothing",
+    category: "tshirt",
     image: AapeBlueShirt,
     sizes: ["S", "M", "L"],
-    in_stock: true,
   },
   {
     id: 8,
@@ -92,9 +85,17 @@ export const products = [
     price: 5799.0,
     description:
       "Y2K-era Ed Hardy blue denim jeans with heavy fading and distressed details. Features large, elaborate white embroidery on the lower leg and back pockets.",
-    category: "men's clothing",
+    category: "pants",
     image: EdHardyPants,
     waist_sizes: ["28", "30", "32", "34"],
-    in_stock: false,
   },
+];
+
+export const category = [
+  "tshirt",
+  "pants",
+  "cap",
+  "jacket",
+  "hoodie",
+  "sweatshirt",
 ];
