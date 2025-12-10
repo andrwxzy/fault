@@ -4,7 +4,6 @@ import { IoClose } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import { products, category } from "../data/products";
 import { useEffect, useState } from "react";
-import { preview } from "vite";
 
 interface Product {
   id: number;
@@ -38,9 +37,9 @@ const Search = () => {
   }, [query]);
 
   // category
-  const handleCategory = (c: string) => {
-    setCategory((prev) => prev.includes(c) ? prev.filter((cat) => cat !== category) : [...prev, c];
-  };
+  // const handleCategory = (c: string) => {
+  //   setCategory((prev) => prev.includes(c) ? prev.filter((npm run dcat) => cat !== category) : [...prev, c];
+  // };
   return (
     <div className="flex gap-2 justify-center">
       <nav className="fixed top-0 left-0 w-full flex items-center gap-50 justify-between shadow-sm max-w-7xl mx-auto px-3 py-3 bg-white">
@@ -95,7 +94,7 @@ const Search = () => {
             {category.map((c) => (
               <div key={c}>
                 <div className="flex items-center gap-2">
-                  <input type="checkbox" name="" onChange={handleCategory(c)} />
+                  {/* <input type="checkbox" name="" onChange={handleCategory(c)} /> */}
                   <p className="uppercase font-light">{c}</p>
                 </div>
               </div>

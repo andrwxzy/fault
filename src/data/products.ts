@@ -26,6 +26,7 @@ export const products = [
       "Vintage-look distressed baseball cap in taupe and navy with signature True Religion horseshoe logo embroidery on the front. Adjustable strap for a comfortable fit.",
     category: "cap",
     image: TrueReligionCap,
+    sizes: ["S", "M", "L", "XL"],
   },
   {
     id: 3,
