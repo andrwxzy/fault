@@ -1,12 +1,28 @@
 import { IoAdd } from "react-icons/io5";
 import { LuMinus } from "react-icons/lu";
-
+import { useState } from "react";
+import type { Product } from "../pages/Search";
 interface Props {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
   modal: boolean;
+  product: Product[];
+  setProduct: React.Dispatch<React.SetStateAction<Product[]>>;
 }
 
-const FilterModal = ({ setModal, modal }: Props) => {
+const FilterModal = ({ setModal, modal, product, setProduct }: Props) => {
+  const lowestPriceHandle = () => {
+    const lowestSort = [...product];
+    lowestSort.sort((a, b) => a.price - b.price);
+    setProduct(lowestSort);
+  };
+
+  const highestPriceHandle = () => {
+    const highestSort = [...product];
+    highestSort.sort((a, b) => b.price - a.price);
+    setProduct(highestSort);
+    console.log("first");
+  };
+
   return (
     <div
       onClick={() => {
@@ -20,9 +36,9 @@ const FilterModal = ({ setModal, modal }: Props) => {
         className="absolute bottom-5 right-10 bg-white rounded-sm shadow-md text-sm w-full h-full lg:h-50 lg:w-50 p-4"
       >
         <p className="mb-3">Sort by</p>
-        <div className="text-gray-400 [&_p]:cursor-pointer [&_p]:mb-1">
-          <p>Price (Lowest)</p>
-          <p>Price (Highest)</p>
+        <div className="text-gray-400 [&_p]:cursor-pointer [&_p]:mb-1 flex flex-col">
+          <button onClick={lowestPriceHandle}>Price (Lowest)</button>
+          <button onClick={highestPriceHandle}>Price (Highest)</button>
         </div>
         <div className="border-b border-t divide-y border-gray-200 divide-gray-200">
           <details className="group">

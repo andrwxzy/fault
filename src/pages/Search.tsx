@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { products, category } from "../data/products";
 import { useEffect, useState } from "react";
 
-interface Product {
+export interface Product {
   id: number;
   title: string;
   price: number;

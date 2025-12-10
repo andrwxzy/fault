@@ -3,8 +3,10 @@ import { products } from "../data/products";
 import { Link } from "react-router-dom";
 import { Activity, useState } from "react";
 import FilterModal from "../components/FilterModal";
+import { type Product } from "./Search";
 
 const Shop = () => {
+  const [product, setProduct] = useState<Product[]>(products);
   const [modal, setModal] = useState(false);
 
   const modalHandle = () => {
@@ -19,7 +21,7 @@ const Shop = () => {
         rotation.
       </p>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8 justify-items-center">
-        {products.map((product) => (
+        {product.map((product) => (
           <Link
             className="w-full"
             key={product.id}
@@ -48,7 +50,12 @@ const Shop = () => {
         Filter
       </button>
       <Activity mode={modal ? "visible" : "hidden"}>
-        <FilterModal setModal={setModal} modal={modal} />
+        <FilterModal
+          setModal={setModal}
+          modal={modal}
+          product={product}
+          setProduct={setProduct}
+        />
       </Activity>
     </div>
   );
