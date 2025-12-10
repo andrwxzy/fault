@@ -1,6 +1,5 @@
 import { IoAdd } from "react-icons/io5";
 import { LuMinus } from "react-icons/lu";
-import { useState } from "react";
 import type { Product } from "../pages/Search";
 interface Props {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
