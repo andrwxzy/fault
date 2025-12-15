@@ -14,7 +14,7 @@ const Shop = () => {
     console.log("the button was clicked");
   };
   return (
-    <div className="text-black max-w-7xl mx-auto px-8 mt-20">
+    <div className="text-black max-w-7xl mx-auto px-8 mt-20 mb-3">
       <h1 className="text-6xl sm:text-7xl mb-4 font-medium">Streetwear</h1>
       <p className="text-gray-600 mb-10">
         The essential drops, foundational pieces, and seasonal heat for every

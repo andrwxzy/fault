@@ -41,7 +41,7 @@ const Search = () => {
   //   setCategory((prev) => prev.includes(c) ? prev.filter((npm run dcat) => cat !== category) : [...prev, c];
   // };
   return (
-    <div className="flex gap-2 justify-center">
+    <div className="flex gap-2 justify-center px-3 mb-3">
       <nav className="fixed top-0 left-0 w-full flex items-center gap-50 justify-between shadow-sm max-w-7xl mx-auto px-3 py-3 bg-white">
         <Link to="/" className="hidden lg:block text-3xl">
           FAULT
@@ -103,14 +103,14 @@ const Search = () => {
         </div>
       </aside>
 
-      <div className="w-[70%] mt-20 grid grid-cols-2 gap-x-4 gap-y-8">
+      <div className="w-full lg:w-[70%] mt-20 grid grid-cols-2 gap-x-4 gap-y-8">
         {result.map((product) => (
           <Link
             className="w-full"
             key={product.id}
             to={`/shop/${product.title}`}
           >
-            <div className="h-80 w-64 block mx-auto">
+            <div className="h-40 w-34 sm:h-80 sm:w-64 block mx-auto">
               <img
                 src={product.image}
                 alt={product.title}
